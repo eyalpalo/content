@@ -12,6 +12,7 @@ def main():
         subprocess.run(['git', 'checkout', 'master'])
         subprocess.run(['git', 'rebase', 'upstream/master'])
         subprocess.run(['git', 'push', '-f', 'origin', 'master'])
+        subprocess.run(['git', 'pull', 'origin', 'master'])
     except Exception as e:
         logging.exception(f'An error occured while trying to fetch and rebase from content master. {e}')
         sys.exit(1)
