@@ -7,7 +7,7 @@ CONTENT_URL = 'https://github.com/demisto/content.git'
 
 def main():
     try:
-        subprocess.run(['git', 'remote', 'add', 'upstream', CONTENT_URL])
+        subprocess.run(['git', 'remote', 'add', 'upstream_content', CONTENT_URL])
         subprocess.run(['git', 'fetch', 'upstream'])
         subprocess.run(['git', 'checkout', 'master'])
         subprocess.run(['git', 'rebase', 'upstream/master'])
