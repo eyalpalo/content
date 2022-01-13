@@ -8,9 +8,9 @@ CONTENT_URL = 'https://github.com/demisto/content.git'
 def main():
     try:
         subprocess.run(['git', 'remote', 'add', 'upstream_content', CONTENT_URL])
-        subprocess.run(['git', 'fetch', 'upstream'])
+        subprocess.run(['git', 'fetch', 'upstream_content'])
         subprocess.run(['git', 'checkout', 'master'])
-        subprocess.run(['git', 'rebase', 'upstream/master'])
+        subprocess.run(['git', 'rebase', 'upstream_content/master'])
         subprocess.run(['git', 'push', '-f', 'origin', 'master'])
         subprocess.run(['git', 'pull', 'origin', 'master'])
     except Exception as e:
